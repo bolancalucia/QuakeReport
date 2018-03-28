@@ -2,18 +2,20 @@ package com.example.android.quakereport;
 
 import android.support.v7.app.AppCompatActivity;
 
-public class Earthquake extends AppCompatActivity{
-    private String mMagnitude;
+public class Earthquake extends AppCompatActivity {
+    private double mMagnitude;
     private String mLocation;
-    private String mTime;
+    private long mTimeInMilliseconds;
+    private String mUrl;
 
-    public Earthquake(String magnitude, String location, String time) {
+    public Earthquake(double magnitude, String location, long timeInMilliseconds, String url) {
         mMagnitude = magnitude;
         mLocation = location;
-        mTime = time;
+        mTimeInMilliseconds = timeInMilliseconds;
+        mUrl = url;
     }
 
-    public String getMagnitude() {
+    public double getMagnitude() {
         return mMagnitude;
     }
 
@@ -21,7 +23,11 @@ public class Earthquake extends AppCompatActivity{
         return mLocation;
     }
 
-    public String getTime() {
-        return mTime;
+    public long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
+    }
+
+    public String getUrl() {
+        return mUrl;
     }
 }

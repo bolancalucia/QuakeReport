@@ -1,33 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:orientation="horizontal"
+    android:paddingEnd="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingStart="16dp">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="88dp"
-        android:text="magnitude"
-        android:layout_weight="1"
+        android:id="@+id/magnitude"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/magnitude_circle"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:id="@+id/magnitude"/>
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        tools:text="8.9" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="88dp"
-        android:text="location"
-        android:gravity="center"
-        android:layout_weight="2"
-        android:id="@+id/location"/>
+    <LinearLayout style="@style/linear_layout_style">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="88dp"
-        android:text="time"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:id="@+id/time"/>
+        <TextView
+            android:id="@+id/location_offset"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            tools:text="30km S of"
+            style="@style/location_style" />
 
+        <TextView
+            android:id="@+id/location"
+            android:maxLines="2"
+            android:textColor="@color/textColorEarthquakeLocation"
+            android:textSize="16sp"
+            tools:text="Long placeholder location that should wrap to more than 2 lines of text"
+            style="@style/location_style" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/linear_layout_style">
+
+        <TextView
+            android:id="@+id/date"
+            tools:text="Mar 6, 2010"
+            style="@style/date_time_style" />
+
+        <TextView
+            android:id="@+id/time"
+            tools:text="3:00 PM"
+            style="@style/date_time_style" />
+
+    </LinearLayout>
 </LinearLayout>
