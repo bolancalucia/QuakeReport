@@ -47,7 +47,8 @@ public final class QueryUtils {
                 long time = properties.getLong("time");
                 String url = properties.getString("url");
 
-                earthquakes.add(new Earthquake(magnitude, place, time, url));
+                Earthquake earthquake = new Earthquake(magnitude,place,time,url);
+                earthquakes.add(earthquake);
             }
         } catch (JSONException e) {
             Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
@@ -126,6 +127,7 @@ public final class QueryUtils {
         } catch (IOException e) {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
-        return extractFeatureFromJson(jsonResponse);
+        List<Earthquake> earthquakes =extractFeatureFromJson(jsonResponse);
+        return earthquakes;
     }
 }

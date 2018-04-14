@@ -1,8 +1,6 @@
 package com.example.android.quakereport;
 
-import android.support.v7.app.AppCompatActivity;
-
-public class Earthquake extends AppCompatActivity {
+public class Earthquake {
     private double mMagnitude;
     private String mLocation;
     private long mTimeInMilliseconds;
