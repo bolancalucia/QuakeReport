@@ -33,7 +33,7 @@ public final class QueryUtils {
         } catch (IOException e) {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
-        List<Earthquake> earthquakes =extractFeatureFromJson(jsonResponse);
+        List<Earthquake> earthquakes = extractFeatureFromJson(jsonResponse);
         return earthquakes;
     }
 
